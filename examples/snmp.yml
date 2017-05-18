@@ -1,0 +1,64 @@
+default:
+  version: 2
+  auth:
+    community: public
+  walk:
+  - 1.3.6.1.2.1.31.1.1.1.6
+  - 1.3.6.1.2.1.31.1.1.1.10
+  - 1.3.6.1.2.1.2.2.1.2
+  - 1.3.6.1.4.1.2021.11.9
+  - 1.3.6.1.4.1.2021.11.10
+  - 1.3.6.1.4.1.2021.11.11
+  - 1.3.6.1.4.1.2021.11.50
+  - 1.3.6.1.4.1.2021.11.51
+  - 1.3.6.1.4.1.2021.11.52
+  - 1.3.6.1.4.1.2021.11.53
+  - 1.3.6.1.4.1.2021.11.61
+  - 1.3.6.1.4.1.2021.4.5
+  - 1.3.6.1.4.1.2021.4.11
+  metrics:
+  - name: ifHCInOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+  - name: ifHCOutOctets
+    oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
+    indexes:
+    - labelname: ifIndex
+      type: gauge
+  - name: ifDescr
+    oid: 1.3.6.1.2.1.2.2.1.2
+    type: DisplayString
+    indexes:
+    - labelname: ifDescr
+      type: gauge
+    lookups:
+    - labels:
+      - ifDescr
+      labelname: ifDescr
+      oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
+  - name: ssCpuRawUser
+    oid: 1.3.6.1.4.1.2021.11.50
+    type: counter
+  - name: ssCpuRawNice
+    oid: 1.3.6.1.4.1.2021.11.51
+    type: counter
+  - name: ssCpuRawSystem
+    oid: 1.3.6.1.4.1.2021.11.52
+    type: counter
+  - name: ssCpuRawIdle
+    oid: 1.3.6.1.4.1.2021.11.53
+    type: counter
+  - name: ssCpuRawSoftIRQ
+    oid: 1.3.6.1.4.1.2021.11.61
+    type: counter
+  - name: memTotalReal
+    oid: 1.3.6.1.4.1.2021.4.5
+    type: gauge
+  - name: memTotalFree
+    oid: 1.3.6.1.4.1.2021.4.11
+    type: gauge
