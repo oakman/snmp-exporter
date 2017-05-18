@@ -7,5 +7,6 @@ docker run \
   --name snmp-exporter \
   --restart always \
   -v <some-path>:/config \
+  -p 9116:9116 \
   oakman/snmp-exporter
 ```
