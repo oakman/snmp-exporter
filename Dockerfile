@@ -5,4 +5,4 @@ ENV LOG_LEVEL="info"
 
 VOLUME /config
 
-CMD         [ "-config.file=/config/snmp.yml", "-log.level $LOG_LEVEL" ]
+CMD         [ "-config.file=/config/snmp.yml", "-log.level=$LOG_LEVEL" ]
